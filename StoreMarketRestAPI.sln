@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreMarketRestAPI", "StoreMarketRestAPI\StoreMarketRestAPI.csproj", "{E85C6A4E-E92A-4E57-9208-5EC1E28DA80B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreMarketRestAPI.DTOs", "StoreMarketRestAPI.DTOs\StoreMarketRestAPI.DTOs.csproj", "{26C144E1-3B4B-4957-A850-DE122ECCBA36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E85C6A4E-E92A-4E57-9208-5EC1E28DA80B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E85C6A4E-E92A-4E57-9208-5EC1E28DA80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E85C6A4E-E92A-4E57-9208-5EC1E28DA80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E85C6A4E-E92A-4E57-9208-5EC1E28DA80B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26C144E1-3B4B-4957-A850-DE122ECCBA36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26C144E1-3B4B-4957-A850-DE122ECCBA36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26C144E1-3B4B-4957-A850-DE122ECCBA36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26C144E1-3B4B-4957-A850-DE122ECCBA36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
