@@ -1,6 +1,7 @@
 ﻿using StoreMarketRestAPI.Entities;
 using StoreMarketRestAPI.Infrastructure.GenericRepository;
 using Microsoft.AspNetCore.Mvc;
+using StoreMarketRestAPI.Interfaces;
 
 namespace StoreMarketRestAPI.Controllers;
 
@@ -8,9 +9,9 @@ namespace StoreMarketRestAPI.Controllers;
 [ApiController]
 public class NomenclatureController : ControllerBase
 {
-    private readonly GenericRepository<Nomenclature> _genericRepository;
+    private readonly IGenericRepository<Nomenclature> _genericRepository;
 
-    public NomenclatureController(GenericRepository<Nomenclature> genericRepository)
+    public NomenclatureController(IGenericRepository<Nomenclature> genericRepository)
     {
         _genericRepository = genericRepository;
     }
