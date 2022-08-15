@@ -1,6 +1,6 @@
 ﻿namespace StoreMarketRestAPI.DTOs;
 
-public class ManufactureDTO : ManufactureBaseDTO
+public class ManufacturerDTO : ManufacturerBaseDTO
 {
     public Guid Id { get; set; }
 }
