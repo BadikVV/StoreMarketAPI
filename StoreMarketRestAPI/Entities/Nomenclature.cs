@@ -8,4 +8,5 @@ public class Nomenclature
     private string MeasureUnit { get; set; }
     public Manufacture Manufacture { get; set; }
     public int Quantity { get; set; }
+    public Guid Id { get; set; }
 }
