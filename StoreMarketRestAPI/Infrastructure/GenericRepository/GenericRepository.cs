@@ -1,15 +1,16 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using StoreMarketRestAPI.Infrastructure.Context;
 using StoreMarketRestAPI.Interfaces;
 
 namespace StoreMarketRestAPI.Infrastructure.GenericRepository;
 
 public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity: class
 {
-    private readonly DbContext _context;
+    private readonly DataDbContext _context;
     private readonly DbSet<TEntity> _dbSet;
 
-    public GenericRepository(DbContext context)
+    public GenericRepository(DataDbContext context)
     {
         _context = context;
         _dbSet = context.Set<TEntity>();
