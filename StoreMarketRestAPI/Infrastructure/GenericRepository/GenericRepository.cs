@@ -51,6 +51,7 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
 
     public void Update(TEntity entity)
     {
+        // var newEntity = GetById(id);
         _dbSet.Attach(entity);
         _context.Entry(entity).State = EntityState.Modified;
         _context.SaveChanges();
