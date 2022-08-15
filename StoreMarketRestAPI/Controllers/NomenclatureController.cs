@@ -21,7 +21,7 @@ public class NomenclatureController : ControllerBase
         _genericRepository.Add(nomenclature);
     }
 
-    [HttpGet("{id")]
+    [HttpGet("{id}")]
     public APIResponse<Nomenclature> GetById(Guid id)
     {
         var response = new APIResponse<Nomenclature>
