@@ -65,13 +65,11 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
         Delete(entity!);
         _context.SaveChanges();
     }
-
-    private void Delete(TEntity entity)
+    
+    public int Count<TEntity>(Expression<Func<TEntity, bool>>? expression = null) where TEntity : BaseEntity
     {
-        if (_context.Entry(entity).State == EntityState.Detached)
-        {
-            _dbSet.Attach(entity);
-        }
-        _dbSet.Remove(entity);
+        if (expression != null)
+            return _context.Set<TEntity>().Where(expression).Count();
+        return _context.Set<TEntity>().Count();
     }
 }
