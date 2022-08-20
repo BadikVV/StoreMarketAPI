@@ -1,6 +1,8 @@
-﻿using StoreMarketRestAPI.Entities;
-using StoreMarketRestAPI.Infrastructure.GenericRepository;
+﻿using Microsoft.AspNetCore.Identity;
+using StoreMarketRestAPI.Entities;
 using Microsoft.AspNetCore.Mvc;
+using StoreMarketRestAPI.DTOs;
+using StoreMarketRestAPI.Infrastructure.Generics;
 using StoreMarketRestAPI.Interfaces;
 
 namespace StoreMarketRestAPI.Controllers;
@@ -9,26 +11,24 @@ namespace StoreMarketRestAPI.Controllers;
 [ApiController]
 public class NomenclatureController : ControllerBase
 {
-    private readonly IGenericRepository<Nomenclature> _genericRepository;
-
-    public NomenclatureController(IGenericRepository<Nomenclature> genericRepository)
+    private readonly GenericService _service;
+    public NomenclatureController(GenericService service)
     {
-        _genericRepository = genericRepository;
+        _service = service;
     }
 
     [HttpPost]
-    public void Add(Nomenclature nomenclature)
+    public NomenclatureDTO Add(NomenclatureCreateDTO nomenclatureDto)
     {
-        _genericRepository.Add(nomenclature);
+        return _service.Create<NomenclatureDTO, Nomenclature, NomenclatureCreateDTO>(nomenclatureDto);
     }
 
     [HttpGet("{id}")]
-    public APIResponse<Nomenclature> GetById(Guid id)
+    public APIResponse<NomenclatureDTO> GetById(Guid id)
     {
-        var response = new APIResponse<Nomenclature>
-        {
-            Data = _genericRepository.GetById(id)
-        };
+        var response = new APIResponse<NomenclatureDTO>();
+        var nomenclature = _service.GetById<NomenclatureDTO, Nomenclature>(id);
+        response.Data = nomenclature;
         return response;
     }
     
@@ -42,12 +42,12 @@ public class NomenclatureController : ControllerBase
     [HttpDelete("{id}")]
     public void Delete(Guid id)
     {
-        _genericRepository.Delete(id);
+        _service.Delete<Nomenclature>(id);
     }
 
     [HttpPut("{id}")]
-    public void Update(Nomenclature nomenclature)
+    public NomenclatureDTO Update(NomenclatureUpdateDTO nomenclature, Guid id)
     {
-        _genericRepository.Update(nomenclature);
+       return _service.Update<NomenclatureDTO, Nomenclature, NomenclatureUpdateDTO>(nomenclature, id);
     }
 }
