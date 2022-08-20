@@ -1,9 +1,10 @@
-﻿namespace StoreMarketRestAPI.Entities;
+﻿using StoreMarketRestAPI.Base;
 
-public class Warehouse
+namespace StoreMarketRestAPI.Entities;
+
+public class Warehouse : BaseEntity
 {
     public string Name { get; set; }
     public string ResponsiblePerson { get; set; }
     public string Adress { get; set; }
-    public Guid Id { get; set; }
 }
