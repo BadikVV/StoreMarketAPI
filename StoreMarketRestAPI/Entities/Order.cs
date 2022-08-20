@@ -1,10 +1,9 @@
-﻿namespace StoreMarketRestAPI.Entities;
+﻿using StoreMarketRestAPI.Base;
 
-public class Order
+namespace StoreMarketRestAPI.Entities;
+
+public class Order : BaseEntity
 {
     public OrderStatus Status { get; set; }
     public List<Product> Products { get; set; }
-    public DateTime RegistrationTime { get; set; }
-    public DateTime ReceptionTime { get; set; }
-    public Guid Id { get; set; }
 }
